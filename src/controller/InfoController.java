@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class StudentFormController {
+public class InfoController {
 
 	@RequestMapping("/showForm")
 	public ModelAndView showForm() {
