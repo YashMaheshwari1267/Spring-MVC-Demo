@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	First Name : ${student.firstname}
-	Last Name : ${student.lastname}
+	First Name : ${student.firstName}
+	Last Name : ${student.lastName}
 	Email : ${student.email}
 	Mobile : ${student.mobile}
 	Course :  ${student.course}

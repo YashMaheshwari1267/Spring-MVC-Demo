@@ -1,22 +1,44 @@
 package model;
 
+import java.util.LinkedHashMap;
+
 public class Student {
-	private String firstname;
-	private String lastname;
+	
+	private int id;
+	private String firstName;
+	private String lastName;
 	private String email;
 	private String mobile;
 	private String course;
-	public String getFirstname() {
-		return firstname;
+	
+	private LinkedHashMap<String,String> courseOption;
+	
+	public Student() {
+		courseOption = new LinkedHashMap<String, String>();
+		
+		courseOption.put("be", "BE");
+		courseOption.put("btech", "BTech");
+		courseOption.put("bpharma", "BPharma");
+		courseOption.put("mba", "MBA");
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	
+	public int getId() {
+		return id;
 	}
-	public String getLastname() {
-		return lastname;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	public String getEmail() {
 		return email;
@@ -36,6 +58,11 @@ public class Student {
 	public void setCourse(String course) {
 		this.course = course;
 	}
+
+	public LinkedHashMap<String, String> getCourseOption() {
+		return courseOption;
+	}
+	
 	
 	
 }

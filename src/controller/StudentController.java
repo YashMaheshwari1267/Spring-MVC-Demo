@@ -1,9 +1,10 @@
 package controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import model.Student;
 
@@ -11,21 +12,26 @@ import model.Student;
 public class StudentController {
 	
 	@RequestMapping("/")
-	public ModelAndView showPage() {
-		ModelAndView mv= new ModelAndView("index");
-		return mv;
+	public String showPage() {
+		return "index";
 	}
 	
-	@RequestMapping("/submitInfo")
-	public ModelAndView submitFormHandler(@ModelAttribute("student") Student student) {
-		Student stud=new Student();
-		stud.setFirstname(student.getFirstname());
-		stud.setLastname(student.getLastname());
-		stud.setEmail(student.getEmail());
-		stud.setMobile(student.getMobile());
-		stud.setCourse(student.getCourse());
-		ModelAndView mv = new ModelAndView("student-info");
-		mv.addObject("student", stud);
-		return mv;
+	@RequestMapping(value="/viewList")
+	public String viewStudentList() {
+		return "student-list";
 	}
+	
+	@RequestMapping(value="/addStudent")
+	public String addNewStudent(Model model) {
+		model.addAttribute("student", new Student());
+		return "add-student";
+	}
+	
+	@RequestMapping(value="/submitForm", method = RequestMethod.POST)
+	public String submitFormHandler(@ModelAttribute("student") Student student) {
+		return "output-data";
+	}
+	
+	
+	
 }
