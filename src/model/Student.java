@@ -16,10 +16,10 @@ public class Student {
 	public Student() {
 		courseOption = new LinkedHashMap<String, String>();
 		
-		courseOption.put("be", "BE");
-		courseOption.put("btech", "BTech");
-		courseOption.put("bpharma", "BPharma");
-		courseOption.put("mba", "MBA");
+		courseOption.put("BE", "BE");
+		courseOption.put("BTech", "BTech");
+		courseOption.put("BPharma", "BPharma");
+		courseOption.put("MBA", "MBA");
 	}
 	
 	public int getId() {

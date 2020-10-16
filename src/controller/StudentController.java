@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.StudentDAO;
 import model.Student;
 
 @Controller
@@ -28,8 +29,12 @@ public class StudentController {
 	}
 	
 	@RequestMapping(value="/submitForm", method = RequestMethod.POST)
-	public String submitFormHandler(@ModelAttribute("student") Student student) {
-		return "output-data";
+	public String submitFormHandler(@ModelAttribute("student") Student student) throws Exception {
+		StudentDAO sd= new StudentDAO();
+		if(sd.insertStudent(student))
+			return "output-data";
+		else
+			return "add-student";
 	}
 	
 	

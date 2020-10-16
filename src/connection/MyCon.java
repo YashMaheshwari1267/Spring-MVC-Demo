@@ -16,7 +16,7 @@ public class MyCon {
 
 	public static Connection myConnection() {
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student", "root", "root");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","root");
 			System.out.println("Database Connected");
 		} catch (Exception e) {
 			System.out.println(e);
